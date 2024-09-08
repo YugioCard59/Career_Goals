@@ -4,77 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheets" href="stylesheet.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Career Goals Vision Board</title>
 </head>
 
-<body>
-    <nav class="navbanner" style="background-image: url('images.doc/land.png'); position: fixed; width: 100%;top: 0;opacity: 1 !important;z-index: 100;height: 5.7rem;background-size:cover;">
-        <h1 id="future-career" style="font-family: Tahoma;font-size: large; text-align: center;">My career will be in: </h1>
-        <div id="navbanner-container" style="align-items: center; align-self: center; text-align: center; font-family: tahoma;">
-            <input type="text" id="future-career-input" placeholder="Enter your career" name="career-input" style="opacity: 100%;margin-bottom: 10px;">
-            <button type="button" id="future-career-input-btn" onclick="myCareer()">Submit</button>
+<body class="body" id="body">
+
+    <nav class="navbar bg-body-tertiary" id="navbanner" style="background-image: url('images.doc/land.png') !important; opacity: 1 !important; justify-content: center !important; width: 1474px; position: fixed;">
+        <h1 id="future-career">My Future Career Will Be: </h1>
+        <div class="container-fluid" id="navbardiv" style="justify-content: center !important;">
+            <input type="text" class="form-control" id="future-career-input" style="margin-bottom: 10px;" placeholder="Enter your career" name="career-input">
+            <button type="button" class="btn btn-warning" id="future-career-input-btn" onclick="myCareer()">Submit</button>
+            <h2 id="my-career-input" style="color:rgb(227, 142, 14); font-weight: bold; font-family: tahoma; font-size: 50px;"></h2>
         </div>
-        <h1 style="text-align: center; margin-top: 0;margin-bottom: 1px; font-family: tahoma;font-size: 30px;color: rgb(20, 247, 126);" id="my-career-input"></h1>
     </nav>
-    <div class="total_top" style="background-size:cover;height:auto;width: 100%;margin-left: 0px; margin-right: 0px;margin-top: 5.5rem; display: flex; font-family: tahoma; font-weight: bold;
-     justify-content: space-between; align-items: center; align-self: center; background-image: url(images.doc/land.png); opacity: 0.8;">
-        <div id="student_entry_training"
-            style="font-family:Tahoma; border-inline: 1rem solid rgb(73, 174, 229); writing-mode: horizontal-tb; width: 33%; height: 445px;">
+
+    <div class="container" id="total_top" style="height: 1000px; padding-top: 145px; width: auto; padding-left: 30px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold; font-size: large; max-width: 1475px; margin-left: 0px; margin-right: 0px; background-size: cover; background-image: url('images.doc/land.png') !important; opacity: 1;">
+        <div class="row" style="width: auto; padding-top: 33px">
+        <div class="col" style="width: 380px;" id="student_entry_training">
             <form action="" method="post" name="student_entry_training">
-                <p id="student_entry_training" style="text-align: center;">
+                <p id="student_entry_training_text" style="text-align: center; font-size: larger;">
                     My Career Education and Training Goals
                 </p>
-                <fieldset class="inputs">
+                <div class="row" style="width: 300px;">
+                <div class="col" id="inputs">
                     <label for="schoolname">I will get my career education from: </label>
-                    <input type="text" id="schoolname" name="schoolname"><br><br>
+                    <input type="text" class="form-control" id="schoolname" name="schoolname"><br><br>
                     <label for="startdate">I will start my training/education on: </label>
-                    <input type="text" id="startdate" name="startdate"><br><br>
+                    <input type="text" class="form-control" id="startdate" name="startdate"><br><br>
                     <label for="enddate">My training/education will end on: </label>
-                    <input type="text" id="enddate" name="enddate"><br><br>
+                    <input type="text" class="form-control" id="enddate" name="enddate"><br><br>
                     <label for="rewardself">When I finish my education/training
                         I will reward myself by:
                     </label>
-                    <input type="text" id="rewardself" name="rewardself"><br><br>
+                    <input type="text" class="form-control" id="rewardself" name="rewardself"><br><br>
                     <label for="treatself">When I earn my first paycheck from my
                         I will treat myself by:
                     </label>
-                    <input type="text" id="treatself" name="treatself"><br><br>
-                    <button type="button" onclick="Display()">Submit</button>
-                </fieldset>
+                    <input type="text" class="form-control" id="treatself" name="treatself"><br>
+                    <button type="button" class="btn btn-warning" style="padding-top: 5px; padding-bottom: 5px;" onclick="Display()">Submit</button>
+                </div>
+                </div>
             </form>
-            <h1 style="text-align: center; margin-top: 0;margin-bottom: 1px; font-family: tahoma;color:aquamarine;font-size: large;" id="displaytraininggoals"></h1>
+            <h2 id="displaytraininggoals" style="color:rgb(242, 150, 13); font-weight: bold; font-family: tahoma; font-size: 25px;" ></h2>
         </div>
-        <div id="student-pic"
-            style="font-family:Tahoma; border-inline: 1rem solid rgb(73, 174, 229); writing-mode: horizontal-tb;width: 33%; height: 445px;">
-            <p style="font-family: tahoma;font-size: medium;color:cornsilk;text-align: center;">Upload Your Picture!</p>
-            <img src="images.doc/grad.png"
-                style="width: 20%;margin-left: 10rem;justify-items: center;" />
-            <input type="file" id="studentPic" accept="image/JPG">
-            <div id="student-pic-box" style="width: 375px; height: 211px; border: 1rem solid rgb(73, 174, 229); background-position: center;
-        background-size: cover;position: relative; border-radius: 10px;justify-content: center;"></div>
+
+        <div class="col" id="student-pic" style="width: 380px; background-size: 400px; background-position: center; background-repeat: no-repeat;">
+            <div id="hat-container">
+            <p style="font-family: tahoma; font-size: large; font-weight: bold; color:cornsilk; text-align: center;">Upload Your Picture!</p>
+            <img src="images.doc/grad.png" style="padding-left: 90px"/>
+            </div>
+            <div class="input-group mb-3" style="margin-top: 5px;">
+                <input type="file" class="form-control" id="inputGroupFile02" style="font-family: tahoma;">
+              </div>
         </div>
-        <div id="student-video" name="student-video"
-            style="font-family:Tahoma; border-inline: 1rem solid rgb(73, 174, 229); writing-mode: horizontal-tb;width: 33%;height:445px;">
-            <p style="font-family: tahoma;text-align: center;font-size: large;color:rgb(212, 239, 9)">Copy & Paste a YouTube video about your Career!</p>
-            <input type="text" id="student-vid-drop" placeholder="paste url here" />
-            <button id="student-vid-drop-btn" onclick="videoDrop()">Submit</button>
-            <iframe src="" name="iframe-viddrop" title="My Career" width="400" style="border-inline: 1rem solid rgb(73, 174, 229); font-family: tahoma;width: fit-content;height:auto;margin-left:15%;">
+
+        <div class="col" style="width: 380px;" id="student-video" name="student-video">
+            <h3 style="font-family: tahoma; text-align: center; font-size: large; color:rgb(212, 239, 9);">Copy & Paste a YouTube video about your Career!</h3>
+            <input type="text" id="student-vid-drop" style="width: 300px" placeholder="paste url here" />
+            <button class="btn btn-warning" id="student-vid-drop-btn" onclick="videoDrop()">Submit</button> 
+            <iframe src="" name="iframe-viddrop" class="inner_inner_box" title="My Career"  style="border: 5px solid rgb(73, 174, 229); font-family: tahoma; width: 350px; height:auto;" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
             </iframe>
         </div>
+        </div>
     </div>
-    <div id="student-inspirational" style="border-block: 2px dotted blue;font-family: tahoma; align-items: center; width: 100% !important; height: 600px !important;
-    display: flex; flex-flow: row; margin-left: 0%; margin-right: 0%; background-image: url('images.doc/land.png'); background-size: cover;">
+
+
+    <div id="student-inspirational" style="border-block: 2px dotted blue;font-family: tahoma; align-items: center; width: auto; height: 600px !important;
+    display: flex; flex-flow: row; background-image: url('images.doc/land.png'); background-size: cover;">
+    <!-- removed allowfullscreen true; width400 height569  -->
         <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRe6tldbdH1zPnzRR1xmd_3KrM5vBldNrPQDkCdEUOLbrobCgaDGc5r02s48LHPCdEz0cU00a1LCt8b/embed?start=true&loop=true&delayms=3000" 
-        frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="padding-left: 20%;" >My Inspirationals</iframe>
+        frameborder="0" width="800px" height="575px" style="padding-right: 50px; margin-left: 300px; margin-right: 300px; padding-left: 50px;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  mozallowfullscreen="true" webkitallowfullscreen="true" >My Inspirationals</iframe>
     </div>
 </body>
 
 </html>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script>
     const form = document.querySelector('[name="student_entry_training"]');
-    const inputs = form.querySelectorAll('fieldset.inputs input')
-    const labels = form.querySelectorAll('fieldset.inputs label')
+    const inputs = form.querySelectorAll('#inputs input')
+    const labels = form.querySelectorAll('#inputs label')
     let studentText = "";
     let filledLabel = "";
     let studentInput = "";
@@ -83,54 +95,71 @@
         labels.forEach(function (label, index) {
             filledLabel = label.innerHTML;
             studentInput = inputs[index].value;
-            studentText += filledLabel + "<br> <span style='color: #f1ac10 !important;'>" + studentInput + "</span><br>";
+            studentText += filledLabel + "<br><span style='color: rgb(0, 0, 0) !important;'>" + studentInput + "</span><br><br>";
+            console.log(studentText)
         });
         form.remove();
         document.getElementById("displaytraininggoals").innerHTML = studentText;
-        
     }
 
-    const studentImageUpload = document.querySelector("#studentPic");
+    const studentImageUpload = document.querySelector("#inputGroupFile02");
     let uploadedImage = "";
 
     studentImageUpload.addEventListener("change", function () {
         const reader = new FileReader();
         reader.addEventListener("load", () => {
             uploadedImage = reader.result;
-            document.querySelector("#student-pic-box").style.backgroundImage = `url(${uploadedImage})`
+            document.querySelector("#student-pic").style.backgroundImage = `url(${uploadedImage})`
         })
         reader.readAsDataURL(this.files[0]);
         studentImageUpload.remove();
     });
 
-
-    const videodropinput = document.querySelector('#student-vid-drop');
-    const buttondrop = document.querySelector("#student-vid-drop-btn");
-    const str = "watch?v=";
-    let newUploadVideo = "";
-
     function videoDrop() {
+        const videodropinput = document.getElementById("student-vid-drop").value;
+        const str = "watch?v=";
+        var newUploadVideo = "";
+        console.log(videodropinput)
 
-        let uploadVideo = videodropinput.value;
-        console.log(buttondrop);
-        console.log(uploadVideo)
-        let matching = uploadVideo.includes(str)
-        if (matching) {
-            console.log(uploadVideo.replace(str, "embed/"));
-            newUploadVideo = uploadVideo.replace(str, "embed/");
+        //check if url is valid youtube url
+        if (!isValidYouTubeUrl(videodropinput)) {
+            alert("Please enter a valid YouTube video URL.");
+            return;
         }
-        document.querySelector("iframe").setAttribute("src", newUploadVideo);
-        console.log(document.getElementsByTagName("iframe").src)
-    };
 
-    const careerInput = document.querySelector('#future-career-input');
-    let careerstr = "";
+        const videoID = getYoutubeVideoId(videodropinput);
 
-    function myCareer() {
-        careerstr = careerInput.value
-        document.getElementById('navbanner-container').remove();
-        document.getElementById('my-career-input').innerHTML = careerstr;
+        var makeMatch = videodropinput.includes(str)
+        if (makeMatch) {
+            newUploadinput = videodropinput.replace(str, "embed/");
+            console.log(newUploadinput)
+        }
+        document.querySelector("iframe").setAttribute("src", newUploadinput)
+        console.log(document.querySelector("iframe").src)
 
     }
+
+    function isValidYouTubeUrl(url) {
+        //regex to check YouTube URL format using regex test method
+        const youtubeRegex = /^(https?:\/\/)?(www\.)?youtube\.com\/watch\?v=([A-Za-z0-9_-]{11})$/;
+        return youtubeRegex.test(url);
+    }
+
+    function getYoutubeVideoId(url) {
+        //extract video ID from URL
+        const urlParams = new URLSearchParams(new URL(url).search);
+        console.log(urlParams, URLSearchParams )
+        return urlParams.get("v");
+    }
+
+   
+    var careerInput;
+    function myCareer() {
+        careerInput = document.getElementById('future-career-input').value
+        document.getElementById('future-career-input').remove()
+        
+        document.getElementById('my-career-input').innerHTML = careerInput;
+        document.getElementById('future-career-input-btn').remove()
+    };
 
 </script>
